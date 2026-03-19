@@ -1,4 +1,4 @@
-fetch("../../data/products.json")
+fetch("../data/products.json")
     .then(response => {
         if (!response.ok) {
             throw new Error("Erreur lors du chargement du JSON");
@@ -6,7 +6,10 @@ fetch("../../data/products.json")
         return response.json();
     })
     .then(products => {
+        console.log("Produits chargés :", products);
+
         const container = document.getElementById("product-list");
+        container.innerHTML = ""; // nettoyage
 
         products.forEach(product => {
             const productDiv = document.createElement("div");
@@ -27,4 +30,6 @@ fetch("../../data/products.json")
     })
     .catch(error => {
         console.error("Erreur :", error);
+        document.getElementById("product-list").innerHTML =
+            "<p>Erreur lors du chargement des produits.</p>";
     });
