@@ -1,0 +1,26 @@
+[
+  {
+    "building": "Bâtiment Informatique",
+    "room": "C313",
+    "openingHours": "08:15 - 16h45",
+    "email": "classe.c313@cpnv.ch"
+  },
+  {
+    "building": "Bâtiment Informatique",
+    "room": "Caféteria",
+    "openingHours": "12:00 - 13:30",
+    "email": "cafet@cpnv.ch"
+  },
+  {
+    "building": "Bâtiment Informatique",
+    "room": "A203",
+    "openingHours": "06:30 - 19:00",
+    "email": "media@cpnv.ch"
+  },
+  {
+    "building": "Bâtiment Médiamatique",
+    "room": "B112",
+    "openingHours": "9:30 - 10:00",
+    "email": "classe.b112@cpnv.ch"
+  }
+]

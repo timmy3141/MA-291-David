@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Classic Sandwich",
+    "alt": "Classic Sandwich",
+    "description": "Fresh bread, salad and cheese prepared every morning.",
+    "price": 7.5,
+    "imageUrl": "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "name": "Berry Yogurt Cup",
+    "alt": "Berry Yogurt Cup",
+    "description": "Creamy yogurt with berries and granola.",
+    "price": 5.2,
+    "imageUrl": "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "name": "Veggie Wrap",
+    "alt": "Veggie Wrap",
+    "description": "A light wrap with crunchy vegetables and herbs.",
+    "price": 6.8,
+    "imageUrl": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "name": "Pepperoni Pizza",
+    "alt": "Pepperoni Pizza",
+    "description": "A pizza covered with slices of pepperoni",
+    "price": 13.9,
+    "imageUrl": "https://plus.unsplash.com/premium_photo-1733259709671-9dbf22bf02cc?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Red Apple",
+    "alt": "Red Apple",
+    "description": "Fresh red apple",
+    "price": 2.5,
+    "imageUrl": "https://images.unsplash.com/photo-1630563451961-ac2ff27616ab?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  }
+]

@@ -1,0 +1,59 @@
+# MA-291 - Projets JavaScript
+
+Ce dépôt contient les travaux pratiques réalisés dans le cadre du cours **MA-291 - JavaScript**. Il inclut trois labos :
+
+- **Labo 1** : Affichage des produits depuis un JSON local
+- **Labo 2** : Chargement des produits depuis un JSON distant et interaction utilisateur
+- **Labo Campus** : Gestion de snacks et points de vente avec affichage dynamique
+
+---
+
+## Labo_1 – Produits locaux
+
+- **Objectif** : Charger et afficher 6 produits depuis un fichier JSON local.
+- **Fichiers clés** :
+  - `index.html` – Conteneur des produits
+  - `main.js` – Script principal
+  - `products.json` – Données des produits
+- **Fonctionnement** : Les produits sont affichés automatiquement à l’ouverture de la page.
+
+
+
+## Labo_2 – Produits distants
+
+- **Objectif** : Charger les produits depuis un JSON distant (`https://dummyjson.com/products`) et permettre l’affichage à la demande.
+- **Fichiers clés** :
+  - `index.html` – Conteneur des produits
+  - `fetchProducts.js` – Script de récupération des données
+- **Fonctionnalités** :
+  - Bouton **Load products** pour afficher les produits
+  - Bouton **Clear products** pour vider l’affichage
+  - Tous les produits du JSON distant sont affichés
+
+
+
+## Labo_campus – Snacks et points de vente
+
+- **Objectif** : Afficher les snacks et les points de vente du campus avec contrôle utilisateur.
+- **Fichiers clés** :
+  - `index.html` – Conteneurs pour les snacks et points de vente
+  - `assets/js/main.js` – Gestion des interactions (chargement, clear, toggle)
+  - `assets/js/fetchSnacks.js` – Récupération des snacks
+  - `assets/js/fetchSalesPoints.js` – Récupération des points de vente
+  - `assets/css/main.css` – Styles principaux
+  - `assets/css/sales-points.css` – Styles points de vente
+  - `data/snacks.json` – Données snacks
+  - `data/points-of-sale.json` – Données points de vente
+- **Fonctionnalités** :
+  - Bouton **Load snacks / Clear snacks**
+  - Bouton **Afficher / Masquer les points de vente**
+  - Affichage dynamique avec gestion des erreurs
+
+
+
+## Prérequis
+
+- Un navigateur (Chrome, Firefox, Edge…)
+- Serveur local recommandé pour les labos 2 et Campus afin de permettre le fetch de fichiers JSON.
+
+ections snacks et points de vente sont dynamiquement affichées/masquées.

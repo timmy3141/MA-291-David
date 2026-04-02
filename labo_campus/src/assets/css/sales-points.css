@@ -1,0 +1,35 @@
+.sales-points-section {
+    margin-top: 2.5rem;
+    padding: 0 0.5rem;
+}
+
+.sales-points-section h2 {
+    margin-bottom: 1.2rem;
+    color: #1d4e89;
+}
+
+.sales-points-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); /* avant 220px */
+    gap: 1.25rem;
+}
+
+.sales-point-card {
+    background: #fdfdfd;
+    border: 1px solid #cbd5e1;
+    border-radius: 14px;
+    padding: 1.2rem;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+    transition: transform 0.2s ease;
+}
+
+.sales-point-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, .15);
+}
+
+.sales-point-card h3 {
+    margin-top: 0;
+    color: #1b3a57;
+    font-size: 1.05rem;
+}
