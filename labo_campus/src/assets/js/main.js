@@ -1,52 +1,53 @@
-// main.js refactorisé
 import fetchSnacks from './fetchSnacks.js';
 import fetchSalesPoints from './fetchSalesPoints.js';
 
-// Récupération des éléments DOM
-const btnSnacks = document.querySelector('#load-snacks-btn');
-const containerSnacks = document.querySelector('#snacks-container');
-const sectionSnacks = containerSnacks.parentElement;
-const feedbackSnacks = document.querySelector('#feedback');
+const loadSnacksBtn = document.querySelector('#load-snacks-btn');
+const snacksContainer = document.querySelector('#snacks-container');
+const snacksSection = document.querySelector('#snacks-section');
+const feedback = document.querySelector('#feedback');
 
-const btnSales = document.querySelector('#toggle-sales-btn');
-const sectionSales = document.querySelector('#sales-section');
-const containerSales = document.querySelector('#sales-container');
-const feedbackSales = document.querySelector('#sales-feedback');
+// Références points de vente (task004)
+const toggleSalesBtn = document.querySelector('#toggle-sales-btn');
+const salesSection = document.querySelector('#sales-section');
+const salesContainer = document.querySelector('#sales-container');
+const salesFeedback = document.querySelector('#sales-feedback');
 
-// États
-let isSnacksVisible = false;
-let areSalesLoaded = false;
-let isSalesVisible = false;
+// Variables d’état (task004)
+let snacksLoaded = false;
+let salesLoaded = false;
+let salesVisible = false;
 
-// Masquer les sections au démarrage
-hideSection(sectionSnacks);
-hideSection(sectionSales);
+loadSnacksBtn.addEventListener('click', loadSnacks);
+toggleSalesBtn.addEventListener('click', toggleSalesPoints);
 
-// Gestion du bouton snacks
-btnSnacks.addEventListener('click', async () => {
-  if (!isSnacksVisible) {
-    feedbackSnacks.textContent = '';
+
+// SNACKS
+async function loadSnacks() {
+  feedback.textContent = '';
+
+  if (!snacksLoaded) {
     try {
       const snacks = await fetchSnacks();
-      renderSnacks(snacks);
-      showSection(sectionSnacks);
-      btnSnacks.textContent = 'Clear snacks';
-      isSnacksVisible = true;
-    } catch (err) {
-      console.error(err);
-      feedbackSnacks.textContent = 'Impossible de charger les snacks.';
+      displaySnacks(snacks);
+
+      snacksSection.style.display = 'block';
+      loadSnacksBtn.textContent = 'Clear snacks';
+      snacksLoaded = true;
+
+    } catch (error) {
+      console.error(error);
+      feedback.textContent = 'Impossible de charger les snacks.';
     }
   } else {
-    containerSnacks.innerHTML = '';
-    hideSection(sectionSnacks);
-    btnSnacks.textContent = 'Load snacks';
-    isSnacksVisible = false;
+    snacksContainer.innerHTML = '';
+    snacksSection.style.display = 'none';
+    loadSnacksBtn.textContent = 'Load snacks';
+    snacksLoaded = false;
   }
-});
+}
 
-// Fonction pour afficher les snacks
-function renderSnacks(snacks) {
-  containerSnacks.innerHTML = snacks.map(snack => `
+function displaySnacks(snacks) {
+  snacksContainer.innerHTML = snacks.map((snack) => `
     <article class="card">
       <img src="${snack.imageUrl}" alt="${snack.alt}">
       <div class="card-content">
@@ -59,38 +60,42 @@ function renderSnacks(snacks) {
   `).join('');
 }
 
-// Gestion du bouton points de vente
-btnSales.addEventListener('click', async () => {
-  if (!areSalesLoaded) {
-    await fetchAndRenderSalesPoints();
+
+// POINTS DE VENTE
+async function toggleSalesPoints() {
+  if (!salesLoaded) {
+    await loadSalesPoints();
   }
 
-  isSalesVisible = !isSalesVisible;
-  if (isSalesVisible) {
-    showSection(sectionSales);
-    btnSales.textContent = 'Clear les points de vente';
+  salesVisible = !salesVisible;
+
+  if (salesVisible) {
+    salesSection.style.display = 'block';
+    toggleSalesBtn.textContent = 'Clear les points de vente';
   } else {
-    hideSection(sectionSales);
-    btnSales.textContent = 'Afficher les points de vente';
-  }
-});
-
-// Chargement des points de vente
-async function fetchAndRenderSalesPoints() {
-  feedbackSales.textContent = '';
-  try {
-    const salesPoints = await fetchSalesPoints();
-    renderSalesPoints(salesPoints);
-    areSalesLoaded = true;
-  } catch (err) {
-    console.error(err);
-    feedbackSales.textContent = 'Impossible de charger les points de vente.';
+    salesSection.style.display = 'none';
+    toggleSalesBtn.textContent = 'Afficher les points de vente';
   }
 }
 
-// Fonction pour afficher les points de vente
-function renderSalesPoints(points) {
-  containerSales.innerHTML = points.map(point => `
+// task003
+async function loadSalesPoints() {
+  salesFeedback.textContent = '';
+
+  try {
+    const points = await fetchSalesPoints();
+    displaySalesPoints(points);
+    salesLoaded = true;
+
+  } catch (error) {
+    console.error(error);
+    salesFeedback.textContent = 'Impossible de charger les points de vente.';
+  }
+}
+
+// task003
+function displaySalesPoints(points) {
+  salesContainer.innerHTML = points.map((point) => `
     <article class="sales-point-card">
       <h3>${point.building}</h3>
       <p><strong>Salle :</strong> ${point.room}</p>
@@ -98,13 +103,4 @@ function renderSalesPoints(points) {
       <p><strong>Email :</strong> ${point.email}</p>
     </article>
   `).join('');
-}
-
-// Helpers pour gérer l'affichage
-function showSection(section) {
-  section.style.display = 'block';
-}
-
-function hideSection(section) {
-  section.style.display = 'none';
 }
