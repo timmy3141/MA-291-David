@@ -55,5 +55,3 @@ Ce dépôt contient les travaux pratiques réalisés dans le cadre du cours **MA
 
 - Un navigateur (Chrome, Firefox, Edge…)
 - Serveur local recommandé pour les labos 2 et Campus afin de permettre le fetch de fichiers JSON.
-
-ections snacks et points de vente sont dynamiquement affichées/masquées.
