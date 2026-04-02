@@ -1,4 +1,4 @@
-# MA-291 - Projets JavaScript
+ # MA-291 - Projets JavaScript
 
 Ce dépôt contient les travaux pratiques réalisés dans le cadre du cours **MA-291 - JavaScript**. Il inclut trois labos :
 
@@ -11,7 +11,7 @@ Ce dépôt contient les travaux pratiques réalisés dans le cadre du cours **MA
 ## Labo_1 – Produits locaux
 
 - **Objectif** : Charger et afficher 6 produits depuis un fichier JSON local.
-- **Fichiers clés** :
+- **Fichiers** :
   - `index.html` – Conteneur des produits
   - `main.js` – Script principal
   - `products.json` – Données des produits
@@ -22,7 +22,7 @@ Ce dépôt contient les travaux pratiques réalisés dans le cadre du cours **MA
 ## Labo_2 – Produits distants
 
 - **Objectif** : Charger les produits depuis un JSON distant (`https://dummyjson.com/products`) et permettre l’affichage à la demande.
-- **Fichiers clés** :
+- **Fichiers** :
   - `index.html` – Conteneur des produits
   - `fetchProducts.js` – Script de récupération des données
 - **Fonctionnalités** :
@@ -35,7 +35,7 @@ Ce dépôt contient les travaux pratiques réalisés dans le cadre du cours **MA
 ## Labo_campus – Snacks et points de vente
 
 - **Objectif** : Afficher les snacks et les points de vente du campus avec contrôle utilisateur.
-- **Fichiers clés** :
+- **Fichiers** :
   - `index.html` – Conteneurs pour les snacks et points de vente
   - `assets/js/main.js` – Gestion des interactions (chargement, clear, toggle)
   - `assets/js/fetchSnacks.js` – Récupération des snacks
