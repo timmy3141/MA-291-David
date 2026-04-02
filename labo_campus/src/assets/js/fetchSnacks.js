@@ -1,16 +1,9 @@
-// fetchSnacks.js
-export default async function getSnacksData() {
-  try {
-    const res = await fetch('../data/snacks.json');
-    if (!res.ok) {
-      throw new Error(`Erreur lors du chargement des snacks: ${res.status}`);
-    }
+export default async function fetchSnacks() {
+  const response = await fetch('../data/snacks.json');
 
-    const data = await res.json();
-    console.log('Snacks chargés avec succès', data);
-    return data;
-  } catch (err) {
-    console.error('fetchSnacks.js:', err);
-    throw err;
+  if (!response.ok) {
+    throw new Error(`Unable to load snacks: ${response.status}`);
   }
+
+  return response.json();
 }
